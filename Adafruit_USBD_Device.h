@@ -73,6 +73,7 @@ class Adafruit_USBD_Device
     void setLanguageDescriptor(uint16_t language_id);
     void setManufacturerDescriptor(const char *s);
     void setProductDescriptor(const char *s);
+    void setSerialDescriptor(const char *s);
 
     bool begin(void);
 

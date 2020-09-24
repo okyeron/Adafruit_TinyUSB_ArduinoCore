@@ -34,6 +34,10 @@
   #define USB_PRODUCT "Unknown"
 #endif
 
+#ifndef USB_SERIAL
+  #define USB_SERIAL "Unknown"
+#endif
+
 #ifndef USB_LANGUAGE
   #define USB_LANGUAGE  0x0409 // default is English
 #endif
@@ -105,6 +109,7 @@ Adafruit_USBD_Device::Adafruit_USBD_Device(void)
   _desc_str_arr[STRID_LANGUAGE] = (const char*) ((uint32_t) USB_LANGUAGE);
   _desc_str_arr[STRID_MANUFACTURER] = USB_MANUFACTURER;
   _desc_str_arr[STRID_PRODUCT] = USB_PRODUCT;
+  _desc_str_arr[STRID_SERIAL] = USB_SERIAL;
   // STRID_SERIAL is platform dependent
 
   _desc_str_count = 4;
@@ -204,6 +209,11 @@ void Adafruit_USBD_Device::setManufacturerDescriptor(const char *s)
 void Adafruit_USBD_Device::setProductDescriptor(const char *s)
 {
   _desc_str_arr[STRID_PRODUCT] = s;
+}
+
+void Adafruit_USBD_Device::setSerialDescriptor(const char *s)
+{
+  _desc_str_arr[STRID_SERIAL] = s;
 }
 
 bool Adafruit_USBD_Device::begin(void)
