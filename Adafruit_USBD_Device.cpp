@@ -247,10 +247,10 @@ uint16_t const* Adafruit_USBD_Device::descriptor_string_cb(uint8_t index, uint16
       chr_count = 1;
     break;
 
-    case 3:
-      // serial Number
-      chr_count = this->getSerialDescriptor(_desc_str+1);
-    break;
+//     case 3:
+//       // serial Number
+//       chr_count = this->getSerialDescriptor(_desc_str+1);
+//     break;
 
     default:
       // Invalid index
