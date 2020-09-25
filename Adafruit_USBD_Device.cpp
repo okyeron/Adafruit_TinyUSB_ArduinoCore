@@ -244,7 +244,7 @@ uint16_t const* Adafruit_USBD_Device::descriptor_string_cb(uint8_t index, uint16
     break;
 
      case 3:
-        // serial Number
+        // Serial Number
         if (!_desc_str_arr[STRID_SERIAL]) {
             chr_count = this->getSerialDescriptor(_desc_str+1);
         break;

@@ -73,6 +73,9 @@ class Adafruit_USBD_Device
     void setLanguageDescriptor(uint16_t language_id);
     void setManufacturerDescriptor(const char *s);
     void setProductDescriptor(const char *s);
+    // ---- Capability to customize device serial number ---- //
+    // For emulating devices which require a specific serial string format
+    // Normally left unset, which defaults to unique id of the processor
     void setSerialDescriptor(const char *s);
 
     bool begin(void);
